@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ThreadAsyncTask</string>
+    <string name="initial_quantity">Initial quantity</string>
+
+
+    <style name="StyleBtn" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="backgroundTint">#B97A61</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+
+    </style>
+</resources>
