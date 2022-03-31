@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         btn.setOnClickListener {
             if ((edNumber.text.isEmpty() || edNumber.text.toString().toInt()  > 40)
-                && ( edMaxNumber.text.isEmpty() || edMaxNumber.text.toString().toInt() > 50)) {
+                || ( edMaxNumber.text.isEmpty() || edMaxNumber.text.toString().toInt() > 50)) {
                 edNumber.error = ("The number should not exceed 40")
                 edMaxNumber.error = ("The number should not exceed 50")
 
@@ -26,6 +26,21 @@ class MainActivity : AppCompatActivity() {
                 i.putExtra("maxNum", edMaxNumber.text.toString().toInt())
                 startActivity(i)
             }
+        }
+
+        btn.setOnClickListener {
+            if (edNumber.text.isEmpty() || edNumber.text.toString().toInt()  > 40) {
+                edNumber.error = ("The number should not exceed 40")
+            }
+            else if ( edMaxNumber.text.isEmpty() || edMaxNumber.text.toString().toInt() > 50)
+                { edMaxNumber.error = ("The number should not exceed 50") }
+            else {
+                val i = Intent(this, Res::class.java)
+                i.putExtra("num", edNumber.text.toString().toInt())
+                i.putExtra("maxNum", edMaxNumber.text.toString().toInt())
+                startActivity(i)
+            }
+
         }
     }
 }
