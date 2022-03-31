@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         val edMaxNumber = findViewById<EditText>(R.id.edMaxNumber)
 
         btn.setOnClickListener {
-            if (edNumber.text.toString().toInt()  > 40  || edMaxNumber.text.toString().toInt() > 50) {
+            if ((edNumber.text.isEmpty() || edNumber.text.toString().toInt()  > 40)
+                && ( edMaxNumber.text.isEmpty() || edMaxNumber.text.toString().toInt() > 50)) {
                 edNumber.error = ("The number should not exceed 40")
                 edMaxNumber.error = ("The number should not exceed 50")
 
